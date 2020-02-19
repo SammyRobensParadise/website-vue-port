@@ -1,13 +1,16 @@
 <template>
     <div>
-        <p>{{msg}}</p>
+        <Navbar></Navbar>
     </div>
 </template>
 <script>
+import Navbar from '../common/Navbar'
 export default {
   name: 'Home',
   props: {
-    msg: String
+  },
+  components:{
+      Navbar
   }
 }
 </script>

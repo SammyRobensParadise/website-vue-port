@@ -1,0 +1,118 @@
+<template>
+  <div>
+    <nav
+      class="navbar navbar-expand-md navbar-fixed-top navbar-default fixed-top navigation-tag b-navbar-toggle b-navbar-collapse"
+      role="navigation"
+      name="navigation bar"
+      value="nav"
+      description="navigation bar for website"
+    >
+      <a class="navbar-brand active" v-bind:href="Links.HOME">
+        {{ Strings.HOME }}
+      </a>
+
+      <button
+        id="navbarToggler"
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="fa fa-bars"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="navbar_projects"
+              v-bind:href="Links.PORTFOLIO"
+              target="_blank"
+              >{{ Strings.PORTFOLIO }}</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="navbar_dribbble" v-bind:href="Links.DRIBBBLE" target="_blank">{{
+              Strings.DRIBBBLE
+            }}</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="./src/assets/Resume_winter_20_v4.pdf"
+              download="Sammy Robens-Paradise Resume"
+              id="navbar_resume"
+              >{{ Strings.RESUME }}</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./me.html" id="navbar_whos_sammy">Who's Sammy</a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="navbar_contact"
+              data-toggle="modal"
+              href="#"
+              data-target="#contactModal"
+              >{{ Strings.CONNECT }}</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              id="navbar_github_link"
+              v-bind:href="Links.GITHUB"
+              target="_blank"
+              >{{ Strings.GITHUB }}</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</template>
+<script>
+import DATA from '../../constants'
+export default {
+  name: 'Navbar',
+  created() {
+    const { Strings, Links } = DATA.Navigation
+    this.Strings = Strings
+    this.Links = Links
+  },
+}
+</script>
+<style scoped>
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+.navigation-padding {
+  fill: none;
+  height: 4rem;
+  width: 100%;
+}
+.navbar-brand {
+  color: #333 !important;
+}
+.nav-link:hover {
+  color: #32228a;
+  cursor: pointer;
+}
+
+.navbar.navbar-default {
+  background-color: #ffffff;
+  opacity: 0.7;
+  box-shadow: 0px 0.3px #ffff;
+}
+
+.navbar-toggler {
+  background-color: grey !important;
+}
+a {
+    text-decoration: none !important;
+}
+</style>
