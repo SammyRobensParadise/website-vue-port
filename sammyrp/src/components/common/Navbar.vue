@@ -49,7 +49,8 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./me.html" id="navbar_whos_sammy">Who's Sammy</a>
+            <!-- TODO change to use router -->
+            <a class="nav-link" href="./me.html" id="navbar_whos_sammy">{{Strings.WHOS_SAMMY}}</a>
           </li>
 
           <li class="nav-item">
