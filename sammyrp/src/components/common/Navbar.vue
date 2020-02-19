@@ -11,7 +11,7 @@
         {{ Strings.HOME }}
       </a>
 
-      <button
+      <b-button v-b-toggle.collapse-2
         id="navbarToggler"
         class="navbar-toggler"
         type="button"
@@ -22,8 +22,8 @@
         aria-label="Toggle navigation"
       >
         <span class="fa fa-bars"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      </b-button>
+      <b-collapse class="collapse navbar-collapse" id="collapse-2">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a
@@ -72,7 +72,7 @@
             >
           </li>
         </ul>
-      </div>
+      </b-collapse>
     </nav>
   </div>
 </template>
