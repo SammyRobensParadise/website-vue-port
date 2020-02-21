@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="navigation-wrapper">
     <nav
       class="navbar navbar-expand-md navbar-fixed-top navbar-default fixed-top navigation-tag b-navbar-toggle b-navbar-collapse"
       role="navigation"
@@ -11,7 +11,8 @@
         {{ Strings.HOME }}
       </a>
 
-      <b-button v-b-toggle.collapse-2
+      <b-button
+        v-b-toggle.collapse-2
         id="navbarToggler"
         class="navbar-toggler"
         type="button"
@@ -50,7 +51,7 @@
           </li>
           <li class="nav-item">
             <!-- TODO change to use router -->
-            <a class="nav-link" href="./me.html" id="navbar_whos_sammy">{{Strings.WHOS_SAMMY}}</a>
+            <a class="nav-link" href="./me.html" id="navbar_whos_sammy">{{ Strings.WHOS_SAMMY }}</a>
           </li>
 
           <li class="nav-item">
@@ -90,7 +91,9 @@ export default {
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-
+#navigation-wrapper {
+  font-family: 'Montserrat', sans-serif !important;
+}
 .navigation-padding {
   fill: none;
   height: 4rem;
@@ -114,6 +117,6 @@ export default {
   background-color: grey !important;
 }
 a {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
 </style>
