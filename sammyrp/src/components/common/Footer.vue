@@ -7,7 +7,9 @@
             {{ this.Footer.COPYRIGHT }}
             <a v-bind:href="`mailto:${this.Footer.Links.LINK}`">{{ this.Footer.Links.LINK }}</a>
           </p>
-          <p class="section-p cp">{{ `Last updated: ${lastUpdatedDate}` }}</p>
+          <p class="section-p cp">
+            {{ `Last updated: ${lastUpdatedDate} | Build ID: ${localSha}` }}
+          </p>
         </div>
       </div>
     </div>
@@ -25,12 +27,15 @@ export default {
   data() {
     return {
       lastUpdatedDate: 'Loading...',
+      localSha: 'loading...',
     }
   },
   mounted() {
     DataHandlers.getGithubHistory().then((response) => {
       let { date } = response.data.commit.committer
+      let { sha } = response.data
       date = date.slice(0, 10)
+      this.localSha = sha
       this.lastUpdatedDate = date
     })
   },
