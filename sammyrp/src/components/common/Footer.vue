@@ -14,13 +14,23 @@
   </div>
 </template>
 <script>
-// import DataHandlers from '../utils/getters'
+import DataHandlers from '../utils/getters'
 import DATA from '../../constants'
 export default {
   name: 'Footer',
   created() {
     const { Footer } = DATA
     this.Footer = Footer
+  },
+  data() {
+    return {
+      lastUpdatedDate: 'Loading...',
+    }
+  },
+  mounted() {
+    DataHandlers.getGithubHistory().then((response) => {
+      console.log(response)
+    })
   },
 }
 </script>
