@@ -7,7 +7,7 @@
             {{ this.Footer.COPYRIGHT }}
             <a v-bind:href="`mailto:${this.Footer.Links.LINK}`">{{ this.Footer.Links.LINK }}</a>
           </p>
-          <p class="section-p cp">{{ this.LastUpdatedDate }}</p>
+          <p class="section-p cp">{{ `Last updated: ${lastUpdatedDate}` }}</p>
         </div>
       </div>
     </div>
@@ -29,7 +29,9 @@ export default {
   },
   mounted() {
     DataHandlers.getGithubHistory().then((response) => {
-      console.log(response)
+      let { date } = response.data.commit.committer
+      date = date.slice(0, 10)
+      this.lastUpdatedDate = date
     })
   },
 }
@@ -38,6 +40,9 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 .footer-wrapper {
   font-family: 'Montserrat', sans-serif !important;
+  bottom: 0rem;
+  margin-top: 2rem;
+  border-top: 0.15rem solid #afafaf;
 }
 .cp {
   margin-top: 2rem;
