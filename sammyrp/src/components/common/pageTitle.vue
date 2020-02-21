@@ -9,8 +9,8 @@
       >
         {{ text }}
       </h1>
-      <h2 class="justify-content-center landing-text-sub display-4" v-if="!!subtext">
-        {{ subText }}}
+      <h2 class="justify-content-center landing-text-sub display-4" v-if="!!subText">
+        {{ subText }}
       </h2>
       <h3 v-if="!!subSubText">{{ subSubText }}</h3>
     </div>

@@ -1,3 +1,4 @@
+const refDate = new Date()
 const DATA = {
   Navigation: {
     Strings: {
@@ -32,5 +33,16 @@ const DATA = {
       PROJECTS: 'Projects',
     },
   },
+  Footer: {
+    Strings: {
+      TITLE: 'Sammy Robens-Paradise',
+    },
+    Links: {
+      LINK: 'srobensparadise@gmail.com',
+    },
+    COPYRIGHT: `© ${refDate.getFullYear().toString()} sammyrp.com`,
+  },
+  REPO_NAME: 'website-vue-port',
+  USERNAME: 'SammyRobensParadise',
 }
 export default DATA
