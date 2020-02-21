@@ -1,12 +1,15 @@
 <template>
   <div>
     <Navbar></Navbar>
-    <PageTile
-      v-bind:text="this.Strings.TITLE"
-      v-bind:subText="this.Strings.SUBTITLE"
-      v-bind:subSubText="this.Strings.ANNOUNCEMENT"
-      v-bind:hasAnimation="true"
-    ></PageTile>
+    <keep-alive>
+      <PageTile
+        v-bind:text="this.Strings.TITLE"
+        v-bind:subText="this.Strings.SUBTITLE"
+        v-bind:subSubText="this.Strings.ANNOUNCEMENT"
+        v-bind:hasAnimation="true"
+      ></PageTile>
+    </keep-alive>
+
     <Footer></Footer>
   </div>
 </template>
