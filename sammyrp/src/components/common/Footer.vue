@@ -21,7 +21,6 @@ export default {
   created() {
     const { Footer } = DATA
     this.Footer = Footer
-    this.LastUpdatedDate = '' //`Last updated: ${DataHandlers.getDataFromGithub('github')}`
   },
 }
 </script>
