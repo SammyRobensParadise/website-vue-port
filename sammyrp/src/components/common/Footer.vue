@@ -47,7 +47,7 @@ export default {
   font-family: 'Montserrat', sans-serif !important;
   bottom: 0rem;
   margin-top: 2rem;
-  border-top: 0.15rem solid #afafaf;
+  border-top: 0.05rem solid #afafaf;
 }
 .cp {
   margin-top: 2rem;

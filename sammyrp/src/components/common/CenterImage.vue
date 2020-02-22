@@ -29,7 +29,16 @@ export default {
 </script>
 <style scoped>
 #center-image-id {
+  user-select: none !important;
+  display: inline-block;
+  margin: 0 auto;
+  width: 100%;
+}
+.center-image {
   user-select: none;
-  display: inline-flex;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 </style>
