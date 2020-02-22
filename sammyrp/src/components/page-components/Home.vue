@@ -9,7 +9,11 @@
         v-bind:hasAnimation="true"
       ></PageTile>
     </keep-alive>
-
+    <CenterImage
+      v-bind:imageFilePath="LandingImage.imageSrc"
+      v-bind:imageAltText="LandingImage.altText"
+      v-bind:styleAsProps="LandingImage.customCSS"
+    ></CenterImage>
     <Footer></Footer>
   </div>
 </template>
@@ -18,6 +22,7 @@ import Navbar from '../common/Navbar'
 import PageTile from '../common/pageTitle'
 import DATA from '../../constants'
 import Footer from '../common/Footer'
+import CenterImage from '../common/CenterImage'
 export default {
   name: 'Home',
   props: {},
@@ -25,6 +30,19 @@ export default {
     Navbar,
     PageTile,
     Footer,
+    CenterImage,
+  },
+  data() {
+    return {
+      LandingImage: {
+        imageSrc: require('../../assets/sammybiking.svg'),
+        altText: `Sammy Biking with Guitar`,
+        customCSS: {
+          height: 'auto',
+          width: '50%',
+        },
+      },
+    }
   },
   created() {
     const { Strings } = DATA.Home
