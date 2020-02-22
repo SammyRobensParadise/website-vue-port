@@ -55,14 +55,16 @@
           </li>
 
           <li class="nav-item">
-            <a
+            <div
               class="nav-link"
               id="navbar_contact"
               data-toggle="modal"
-              href="#"
+              href=""
               data-target="#contactModal"
-              >{{ Strings.CONNECT }}</a
+              v-on:click="showContactPopover = true"
             >
+              {{ Strings.CONNECT }}
+            </div>
           </li>
           <li class="nav-item">
             <a
@@ -76,16 +78,47 @@
         </ul>
       </b-collapse>
     </nav>
+    <template>
+      <Popover
+        v-bind:show="showContactPopover"
+        v-bind:title="PopoverContent.title"
+        v-bind:subTitle="PopoverContent.subTitle"
+        v-on:close="showContactPopover = false"
+      ></Popover>
+    </template>
   </div>
 </template>
 <script>
 import DATA from '../../constants'
+import Popover from './Popover'
 export default {
   name: 'Navbar',
   created() {
     const { Strings, Links } = DATA.Navigation
     this.Strings = Strings
     this.Links = Links
+    this.PopoverContent = {
+      title: 'Get in touch!',
+      subTitle: 'Send me an email or check out my linkedin',
+      content: (
+        <div>
+          <p>
+            <a href={`mailto=${Links.EMAIL}`}>Email: srobensparadise@gmail.com</a>
+          </p>
+          <p>
+            <a href={Links.LINKEDIN}>Linkedin</a>
+          </p>
+        </div>
+      ),
+    }
+  },
+  data() {
+    return {
+      showContactPopover: false,
+    }
+  },
+  components: {
+    Popover,
   },
 }
 </script>
