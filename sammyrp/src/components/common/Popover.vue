@@ -6,7 +6,17 @@
         <div id="popoverbody">
           <h3>{{ title }}</h3>
           <h4>{{ subTitle }}</h4>
-          <div id="content">{{ content }}</div>
+          <div v-for="content in content" v-bind:key="content" id="content">
+            <div v-if="content.type === 'p'">
+              <p>{{ content.value }}</p>
+            </div>
+            <div v-else-if="content.type == 'a'">
+              <a v-bind:href="content.ref">{{ content.value }}</a>
+            </div>
+            <div v-else>
+              <p>{{ content.value }}</p>
+            </div>
+          </div>
         </div>
         <div id="bottombar"></div>
       </div>
@@ -20,7 +30,7 @@ export default {
   props: {
     title: String,
     subTitle: String,
-    content: Object,
+    content: Array,
     show: Boolean,
   },
 }
@@ -76,5 +86,8 @@ export default {
   border-top: solid 1rem #32218a;
   box-sizing: border-box;
   border-radius: 1rem 1rem 0rem 0rem;
+}
+#bottombar {
+  padding-top: 2rem;
 }
 </style>
