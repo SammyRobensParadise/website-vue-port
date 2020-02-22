@@ -15,7 +15,9 @@ const DATA = {
       HOME: 'https://sammyrp.com',
       DRIBBBLE: 'https://dribbble.com/sammyrp',
       EMAIL: 'srobensparadise@gmail.com',
+      SCHOOL_EMAIL: 'srobensp@edu.uwaterloo.ca',
       GITHUB: 'https://github.com/SammyRobensParadise',
+      LINKEDIN: 'https://www.linkedin.com/in/sammy-robens-paradise/',
     },
   },
   Home: {
