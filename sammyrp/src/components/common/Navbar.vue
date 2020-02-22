@@ -83,6 +83,7 @@
         v-bind:show="showContactPopover"
         v-bind:title="PopoverContent.title"
         v-bind:subTitle="PopoverContent.subTitle"
+        v-bind:content="PopoverContent.content"
         v-on:close="showContactPopover = false"
       ></Popover>
     </template>
@@ -100,16 +101,10 @@ export default {
     this.PopoverContent = {
       title: 'Get in touch!',
       subTitle: 'Send me an email or check out my linkedin',
-      content: (
-        <div>
-          <p>
-            <a href={`mailto=${Links.EMAIL}`}>Email: srobensparadise@gmail.com</a>
-          </p>
-          <p>
-            <a href={Links.LINKEDIN}>Linkedin</a>
-          </p>
-        </div>
-      ),
+      content: [
+        { type: 'a', value: 'Linkedin', ref: Links.LINKEDIN },
+        { type: 'a', value: 'srobensparadise@gmail.com', ref: `mailto:${Links.EMAIL}` },
+      ],
     }
   },
   data() {
